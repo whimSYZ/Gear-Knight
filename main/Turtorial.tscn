@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://pixel3.fnt" type="BitmapFont" id=1]
+[ext_resource path="res://Turtorial.tres.gd" type="Script" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=4]
+
+shader/shading_mode = 0
+
+[sub_resource type="Theme" id=1]
+
+default_font = ExtResource( 1 )
+
+[node name="Turtorial" type="AcceptDialog"]
+
+material/material = SubResource( 4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = SubResource( 1 )
+margin/left = 288.0
+margin/top = 160.0
+margin/right = 552.0
+margin/bottom = 336.0
+popup/exclusive = true
+window/title = "Instructions"
+dialog/text = "For Computer Players:\n\nW/ Up Arrow/ Space for jump\nA/ Left Arrow for moving left\nD/ Right Arrow for moving right\nJ/ Z for Attack\n"
+dialog/hide_on_ok = true
+script/script = ExtResource( 2 )
+
+

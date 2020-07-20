@@ -1,0 +1,792 @@
+[gd_scene load_steps=34 format=1]
+
+[ext_resource path="res://coin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://moving_platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://one_way_platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Gear_danger.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Pokémon Black & White Sound Gamerip_ Pokémon Center.ogg" type="AudioStream" id=5]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://parallax_bg.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Gear.tex" type="Texture" id=8]
+[ext_resource path="res://Sun.png" type="Texture" id=9]
+[ext_resource path="res://pixel4.fnt" type="BitmapFont" id=10]
+[ext_resource path="res://coin.png" type="Texture" id=11]
+[ext_resource path="res://game_state.gd" type="Script" id=12]
+[ext_resource path="res://fall.gd" type="Script" id=13]
+[ext_resource path="res://sound_coin.wav" type="Sample" id=14]
+[ext_resource path="res://Teleporter.gd" type="Script" id=15]
+[ext_resource path="res://lantern.png" type="Texture" id=16]
+[ext_resource path="res://light_2.png" type="Texture" id=17]
+[ext_resource path="res://Tileset_grassland2.tres" type="TileSet" id=18]
+[ext_resource path="res://player.tscn" type="PackedScene" id=19]
+[ext_resource path="res://generic-platformer-tiles.png" type="Texture" id=20]
+
+[sub_resource type="Animation" id=12]
+
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Gear:visibility/self_opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 1.0, 0.0 ] }
+
+[sub_resource type="Animation" id=13]
+
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Gear1:visibility/self_opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 1.0, 0.0 ] }
+
+[sub_resource type="Animation" id=14]
+
+length = 2.0
+loop = false
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Gear2:visibility/self_opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.00956643, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 1.0, 1.0, 0.0 ] }
+
+[sub_resource type="Animation" id=15]
+
+length = 1.3
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Gear:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.3, 0.6, 0.9 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":1, "values":[ 0, 1, 2, 3 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Gear1:frame")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0.2, 0.5, 0.8, 1.1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":1, "values":[ 0, 1, 2, 3 ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Gear2:frame")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0.4, 0.7, 1, 1.3 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":1, "values":[ 0, 1, 2, 3 ] }
+
+[sub_resource type="Animation" id=9]
+
+resource/name = "Fade"
+length = 1.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visibility/self_opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.7, 1.5 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 1.0, 1.0, 0.0 ] }
+
+[sub_resource type="Animation" id=30]
+
+length = 1.5
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1 ), "update":1, "values":[ 0, 0, 1, 2, 3, 2, 1 ] }
+
+[sub_resource type="Animation" id=31]
+
+length = 8.0
+loop = false
+step = 0.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ 0 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("sound:play/play")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ "coin" ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("particles:visibility/self_opacity")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 1.66 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 1.0, 0.0 ] }
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite:visibility/self_opacity")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 1.0, 0.0 ] }
+tracks/4/type = "value"
+tracks/4/path = NodePath("particles:config/emitting")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ true ] }
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = { "times":FloatArray( 2.7 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"queue_free" } ] }
+
+[sub_resource type="RectangleShape2D" id=16]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="SampleLibrary" id=17]
+
+samples/coin = { "db":0.0, "pitch":1.0, "sample":ExtResource( 14 ) }
+
+[sub_resource type="CircleShape2D" id=18]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="Animation" id=19]
+
+length = 2.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("lantern:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.4, 0.8, 1.2, 1.6, 2 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1 ), "update":1, "values":[ 0, 1, 2, 3, 4, 5 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("lantern:transform/rot")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 10.0, 15.0, 10.0, 0.0, -10.0, -15.0, -10.0 ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("collision:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 8, 0 ), Vector2( 16, 0 ), Vector2( 8, 0 ), Vector2( 0, 0 ), Vector2( -8, 0 ), Vector2( -16, 0 ), Vector2( -8, 0 ) ] }
+
+[sub_resource type="Animation" id=20]
+
+length = 4.0
+loop = false
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("lantern/light_2:visibility/self_opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("lantern/light_2:transform/scale")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6, 4 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 5, 5 ), Vector2( 10, 10 ), Vector2( 15, 15 ), Vector2( 20, 20 ), Vector2( 25, 25 ), Vector2( 30, 30 ), Vector2( 35, 35 ), Vector2( 40, 40 ), Vector2( 45, 45 ), Vector2( 50, 50 ) ] }
+
+[sub_resource type="SampleLibrary" id=21]
+
+samples/coin = { "db":0.0, "pitch":1.0, "sample":ExtResource( 14 ) }
+
+[node name="stage" type="Node"]
+
+[node name="coins" type="Node" parent="."]
+
+editor/display_folded = true
+
+[node name="coin" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 480, 1120 )
+
+[node name="coin1" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 448, 1664 )
+
+[node name="coin 2" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 416, 1120 )
+
+[node name="coin3" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 640, 1696 )
+
+[node name="coin7" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 704, 1696 )
+
+[node name="coin 3" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 544, 1120 )
+
+[node name="coin5 2" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 512, 1664 )
+
+[node name="coin4" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 608, 1120 )
+
+[node name="coin5" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 576, 1664 )
+
+[node name="coin 4" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1088, 1216 )
+
+[node name="coin6" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1344, 1280 )
+
+[node name="coin 7" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1408, 1280 )
+
+[node name="coin8" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1024, 1216 )
+
+[node name="coin 8" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 2304, 1472 )
+
+[node name="coin12" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 2336, 1472 )
+
+[node name="coin13" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 2432, 1472 )
+
+[node name="coin14" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 2464, 1472 )
+
+[node name="coin15" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 2464, 1728 )
+
+[node name="coin16" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 2432, 1728 )
+
+[node name="coin18" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 2336, 1728 )
+
+[node name="coin19" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 2304, 1728 )
+
+[node name="coin9" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 864, 1120 )
+
+[node name="coin11" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 864, 1184 )
+
+[node name="coin 9" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1984, 1408 )
+
+[node name="coin20 3" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1696, 1632 )
+
+[node name="coin10" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 2016, 1408 )
+
+[node name="coin20 2" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1760, 1632 )
+
+[node name="coin17" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1952, 1408 )
+
+[node name="coin20" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1632, 1632 )
+
+[node name="coin 19" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 992, 1600 )
+
+[node name="coin 20" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1024, 1600 )
+
+[node name="coin 21" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1395.24, 1927.81 )
+
+[node name="coin 22" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1385.95, 1920.51 )
+
+[node name="coin 23" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1404.53, 1920.51 )
+
+[node name="coin 24" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1412.49, 1909.23 )
+
+[node name="coin 25" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1413.81, 1897.29 )
+
+[node name="coin 26" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1402.54, 1888.66 )
+
+[node name="coin 27" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1394.58, 1897.95 )
+
+[node name="coin 28" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1384.62, 1888 )
+
+[node name="coin 29" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1376, 1896.62 )
+
+[node name="coin 30" parent="coins" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1379.32, 1907.9 )
+
+[node name="props" type="Node" parent="."]
+
+editor/display_folded = true
+
+[node name="moving_platform" parent="props" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 2016, 1728 )
+motion = Vector2( 150, 0 )
+cycle = 5.0
+
+[node name="one_way_platform" parent="props" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 2752, 1632 )
+
+[node name="Gear_danger" type="Node" parent="."]
+
+editor/display_folded = true
+
+[node name="Gear_danger" parent="Gear_danger" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1536, 1344 )
+
+[node name="Gear_danger1" parent="Gear_danger" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1600, 1376 )
+
+[node name="Gear_danger2" parent="Gear_danger" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1696, 1376 )
+
+[node name="Gear_danger3" parent="Gear_danger" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1760, 1440 )
+
+[node name="Gear_danger4" parent="Gear_danger" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2656, 1568 )
+
+[node name="Gear_danger5" parent="Gear_danger" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2624, 1568 )
+
+[node name="music" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 5 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 10.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="enemies" type="Node" parent="."]
+
+editor/display_folded = true
+
+[node name="enemy 5" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1168, 1680 )
+
+[node name="enemy 6" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 528, 1072 )
+
+[node name="enemy 7" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 848, 1232 )
+
+[node name="enemy 8" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1072, 1232 )
+
+[node name="enemy 12" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1552, 1712 )
+
+[node name="enemy 14" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 2096, 1488 )
+
+[node name="enemy15" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 2896, 1680 )
+
+[node name="parallax_bg" parent="." instance=ExtResource( 7 )]
+
+[node name="hud" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Gear" type="Sprite" parent="hud"]
+
+transform/pos = Vector2( 180, 36 )
+transform/scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 8 )
+hframes = 4
+frame = 1
+
+[node name="Gear1" type="Sprite" parent="hud"]
+
+transform/pos = Vector2( 220, 36 )
+transform/scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 8 )
+hframes = 4
+
+[node name="Gear2" type="Sprite" parent="hud"]
+
+transform/pos = Vector2( 260, 36 )
+transform/scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 8 )
+hframes = 4
+
+[node name="Gear_anim" type="AnimationPlayer" parent="hud"]
+
+playback/process_mode = 0
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/Hurt_1 = SubResource( 12 )
+anims/Hurt_2 = SubResource( 13 )
+anims/Hurt_3 = SubResource( 14 )
+anims/spin = SubResource( 15 )
+next/spin = ""
+playback/active = true
+playback/speed = 2.0
+blend_times = [  ]
+autoplay = "spin"
+
+[node name="Light2D" type="Light2D" parent="hud"]
+
+transform/pos = Vector2( 400, 78.7722 )
+transform/scale = Vector2( 1.55, 1.45 )
+enabled = true
+editor_only = false
+texture = ExtResource( 9 )
+offset = Vector2( 0, 0 )
+scale = 10.0
+color = Color( 0.339844, 0.215057, 0.276476, 1 )
+energy = 0.3
+mode = 0
+range/height = 654.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = true
+shadow/color = Color( 0, 0, 0, 1 )
+shadow/buffer_size = 16384
+shadow/esm_multiplier = 4096.0
+shadow/item_mask = 1
+__meta__ = { "_edit_lock_":true }
+
+[node name="Stage" type="Label" parent="hud"]
+
+rect/scale = Vector2( 4, 4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 192.0
+margin/top = 160.0
+margin/right = 284.0
+margin/bottom = 183.0
+custom_fonts/font = ExtResource( 10 )
+text = "Stage-4"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="anim" type="AnimationPlayer" parent="hud/Stage"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/Fade = SubResource( 9 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "Fade"
+
+[node name="coin_number" type="Label" parent="hud"]
+
+rect/scale = Vector2( 1.25, 1.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 32.0
+margin/top = 20.0
+margin/right = 120.0
+margin/bottom = 38.0
+custom_fonts/font = ExtResource( 10 )
+text = "C in:0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="sprite" type="Sprite" parent="hud"]
+
+transform/pos = Vector2( 60, 36 )
+texture = ExtResource( 11 )
+hframes = 4
+
+[node name="anim" type="AnimationPlayer" parent="hud"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/spin = SubResource( 30 )
+anims/taken = SubResource( 31 )
+playback/active = true
+playback/speed = 3.0
+blend_times = [  ]
+autoplay = "spin"
+
+[node name="game_state" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+script/script = ExtResource( 12 )
+
+[node name="fall" type="Area2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 2272, 1920 )
+input/pickable = true
+shapes/0/shape = SubResource( 16 )
+shapes/0/transform = Matrix32( 250, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 13 )
+__meta__ = { "_edit_group_":true }
+
+[node name="sprite" type="Sprite" parent="fall"]
+
+hframes = 4
+
+[node name="collision" type="CollisionShape2D" parent="fall"]
+
+transform/scale = Vector2( 250, 1 )
+shape = SubResource( 16 )
+trigger = false
+_update_shape_index = 0
+
+[node name="sound" type="SamplePlayer2D" parent="fall"]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 17 )
+config/pitch_random = 0.0
+
+[node name="lantern" type="Area2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 224, 1600 )
+z/z = 1
+input/pickable = true
+shapes/0/shape = SubResource( 18 )
+shapes/0/transform = Matrix32( 1.23077, 3.7253e-09, -3.7253e-09, 1.23077, -1.51794, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 15 )
+__meta__ = { "_edit_group_":true }
+
+[node name="lantern" type="Sprite" parent="lantern"]
+
+transform/pos = Vector2( 4.19247, -63.8625 )
+transform/rot = -1.89743
+texture = ExtResource( 16 )
+offset = Vector2( -4.19247, 63.8625 )
+hframes = 6
+
+[node name="Light2D" type="Light2D" parent="lantern/lantern"]
+
+transform/pos = Vector2( -4.19247, 63.8625 )
+transform/scale = Vector2( 2, 2 )
+enabled = true
+editor_only = false
+texture = ExtResource( 17 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 0.75
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="light_2" type="Sprite" parent="lantern/lantern"]
+
+visibility/self_opacity = 0.1
+transform/pos = Vector2( -4.4918, 63.8422 )
+transform/rot = -0.268595
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 17 )
+
+[node name="lantern_anim" type="AnimationPlayer" parent="lantern"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/spin = SubResource( 19 )
+anims/taken = SubResource( 20 )
+playback/active = true
+playback/speed = 2.0
+blend_times = [  ]
+autoplay = "spin"
+
+[node name="sound" type="SamplePlayer2D" parent="lantern"]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 21 )
+config/pitch_random = 0.0
+
+[node name="collision" type="CollisionShape2D" parent="lantern"]
+
+transform/pos = Vector2( -1.51794, 0 )
+transform/rot = -1.73423e-07
+transform/scale = Vector2( 1.23077, 1.23077 )
+shape = SubResource( 18 )
+trigger = false
+_update_shape_index = 0
+
+[node name="TileMap" type="TileMap" parent="."]
+
+z/z = -1
+mode = 0
+tile_set = ExtResource( 18 )
+cell/size = Vector2( 32, 32 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( 917571, 31, 2031618, 75, 2031620, 75, 2031622, 75, 2031624, 75, 2162698, 37, 2162699, 36, 2162709, 39, 2162710, 38, 2228225, 31, 2228226, 0, 2228227, 59, 2228228, 61, 2228229, 61, 2228230, 61, 2228231, 61, 2228232, 61, 2228233, 62, 2228234, 63, 2228235, 43, 2228236, 74, 2228237, 74, 2228238, 74, 2228239, 74, 2228240, 74, 2228241, 74, 2228242, 74, 2228243, 74, 2228244, 74, 2228245, 46, 2228246, 0, 2228247, 59, 2228248, 62, 2228249, 63, 2228250, 29, 2293763, 27, 2293764, 15, 2293765, 3, 2293766, 4, 2293767, 4, 2293768, 16, 2293769, 17, 2293771, 49, 2293772, 50, 2293773, 53, 2293774, 53, 2293775, 53, 2293776, 53, 2293777, 53, 2293778, 53, 2293779, 53, 2293780, 51, 2293781, 52, 2293783, 2, 2293784, 5, 2359300, 27, 2359301, 15, 2359302, 3, 2359303, 16, 2359304, 17, 2359319, 2, 2359320, 5, 2424837, 27, 2424838, 15, 2424839, 28, 2424855, 2, 2424856, 5, 2490374, 25, 2490391, 2, 2490392, 5, 2555927, 2, 2555928, 61, 2555929, 61, 2555930, 62, 2555931, 536870912, 2555932, 29, 2555934, 31, 2555935, 0, 2555936, 59, 2555937, 62, 2555938, 63, 2555939, 29, 2621463, 2, 2621464, 3, 2621465, 16, 2621466, 17, 2621472, 2, 2621473, 3, 2621474, 62, 2621475, 63, 2621476, 29, 2686999, 2, 2687000, 16, 2687001, 17, 2687008, 2, 2687009, 3, 2687010, 3, 2687011, 62, 2687012, 63, 2687013, 29, 2687017, 31, 2687018, 536870975, 2687019, 61, 2687020, 63, 2687021, 29, 2687023, 536870975, 2687024, 63, 2687025, 29, 2752535, 2, 2752536, 72, 2752544, 2, 2752545, 3, 2752546, 3, 2752547, 3, 2752548, 61, 2752549, 62, 2752550, 63, 2752551, 29, 2752555, 13, 2752560, 31, 2752561, 536870975, 2752562, 63, 2752563, 29, 2818071, 71, 2818072, 72, 2818080, 2, 2818081, 73, 2818082, 73, 2818083, 3, 2818084, 3, 2818085, 5, 2818091, 13, 2818098, 31, 2818099, 536870975, 2818100, 61, 2818101, 63, 2818102, 29, 2883607, 71, 2883608, 72, 2883616, 2, 2883617, 73, 2883618, 73, 2883619, 73, 2883620, 73, 2883621, 5, 2883627, 13, 2883636, 13, 2883637, 31, 2883638, 536870975, 2883639, 63, 2883640, 29, 2949143, 71, 2949144, 72, 2949152, 71, 2949153, 73, 2949154, 73, 2949155, 73, 2949156, 73, 2949157, 5, 2949163, 13, 2949172, 13, 2949179, 31, 2949180, 0, 2949181, 59, 2949182, 62, 2949183, 63, 2949184, 29, 3014679, 71, 3014680, 72, 3014688, 71, 3014689, 73, 3014690, 73, 3014691, 73, 3014692, 73, 3014693, 72, 3014699, 13, 3014708, 13, 3014717, 2, 3014718, 5, 3080215, 71, 3080216, 72, 3080224, 71, 3080225, 73, 3080226, 73, 3080227, 73, 3080228, 73, 3080229, 72, 3080235, 13, 3080244, 78, 3080252, 31, 3080253, 536870975, 3080254, 59, 3080255, 61, 3080256, 61, 3080257, 62, 3080258, 63, 3080259, 29, 3080261, 31, 3080262, 1, 3080263, 29, 3080265, 31, 3080266, 1, 3080267, 29, 3080270, 1, 3080271, 29, 3145751, 71, 3145752, 72, 3145760, 71, 3145761, 73, 3145762, 73, 3145763, 73, 3145764, 73, 3145765, 72, 3145771, 78, 3145780, 78, 3145790, 2, 3145791, 3, 3145792, 3, 3145793, 5, 3145798, 13, 3145802, 13, 3145806, 13, 3145808, 31, 3145809, 0, 3145810, 61, 3145811, 63, 3145812, 29, 3145819, 31, 3145820, 0, 3145821, 62, 3145822, 63, 3211287, 71, 3211288, 72, 3211296, 71, 3211297, 73, 3211298, 73, 3211299, 73, 3211300, 73, 3211301, 72, 3211307, 78, 3211316, 78, 3211326, 2, 3211327, 73, 3211328, 3, 3211329, 5, 3211334, 13, 3211338, 78, 3211342, 13, 3211346, 25, 3211357, 13, 3276823, 71, 3276824, 72, 3276832, 71, 3276833, 73, 3276834, 73, 3276835, 73, 3276836, 73, 3276837, 72, 3276843, 78, 3276852, 78, 3276862, 71, 3276863, 73, 3276864, 73, 3276865, 72, 3276870, 78, 3276874, 78, 3276878, 13, 3276883, 31, 3276888, 29, 3276893, 13, 3276895, 57, 3342340, 31, 3342341, 536870975, 3342342, 59, 3342343, 61, 3342344, 62, 3342345, 63, 3342359, 71, 3342360, 72, 3342366, 31, 3342367, 0, 3342368, 63, 3342369, 73, 3342370, 73, 3342371, 73, 3342372, 73, 3342373, 72, 3342379, 78, 3342388, 78, 3342398, 71, 3342399, 73, 3342400, 73, 3342401, 72, 3342406, 78, 3342410, 78, 3342414, 78, 3342429, 13, 3342430, 40, 3342431, 1, 3342432, 29, 3407878, 14, 3407879, 3, 3407880, 28, 3407895, 71, 3407896, 72, 3407902, 31, 3407903, 0, 3407904, 59, 3407905, 63, 3407906, 73, 3407907, 73, 3407908, 73, 3407909, 72, 3407915, 78, 3407922, 0, 3407923, 59, 3407924, 61, 3407925, 61, 3407926, 61, 3407927, 62, 3407928, 536870912, 3407929, 29, 3407934, 71, 3407935, 73, 3407936, 73, 3407937, 72, 3407942, 78, 3407946, 78, 3407950, 78, 3407954, 31, 3407955, 536870975, 3407956, 59, 3407957, 61, 3407958, 63, 3407959, 72, 3407965, 13, 3407967, 13, 3473415, 25, 3473419, 31, 3473420, 0, 3473421, 59, 3473422, 61, 3473423, 61, 3473424, 61, 3473425, 62, 3473426, 536870912, 3473427, 29, 3473431, 71, 3473432, 0, 3473433, 59, 3473434, 62, 3473435, 536870912, 3473436, 29, 3473440, 2, 3473441, 61, 3473442, 61, 3473443, 62, 3473444, 63, 3473445, 72, 3473451, 78, 3473457, 0, 3473458, 59, 3473459, 3, 3473460, 3, 3473461, 3, 3473462, 3, 3473463, 5, 3473470, 71, 3473471, 73, 3473472, 73, 3473473, 72, 3473478, 78, 3473482, 78, 3473486, 78, 3473489, 31, 3473490, 536870975, 3473491, 59, 3473492, 4, 3473493, 4, 3473494, 61, 3473495, 61, 3473496, 61, 3473497, 61, 3473498, 61, 3473499, 61, 3473500, 61, 3473501, 13, 3473503, 13, 3538957, 2, 3538958, 3, 3538959, 3, 3538960, 3, 3538961, 5, 3538962, 0, 3538963, 59, 3538964, 61, 3538965, 61, 3538966, 61, 3538967, 62, 3538968, 63, 3538969, 2, 3538970, 5, 3538976, 2, 3538977, 3, 3538978, 3, 3538979, 3, 3538980, 61, 3538981, 61, 3538982, 62, 3538983, 63, 3538984, 29, 3538986, 31, 3538987, 1, 3538988, 29, 3538989, 31, 3538990, 0, 3538991, 59, 3538992, 61, 3538993, 61, 3538994, 3, 3538995, 3, 3538996, 3, 3538997, 3, 3538998, 3, 3538999, 72, 3539006, 71, 3539007, 73, 3539008, 73, 3539009, 72, 3539013, 31, 3539014, 1, 3539015, 29, 3539018, 78, 3539022, 78, 3539024, 31, 3539025, 536870975, 3539026, 59, 3539027, 4, 3539028, 4, 3539029, 3, 3539030, 3, 3539031, 3, 3539032, 3, 3539033, 3, 3539034, 3, 3539035, 73, 3539036, 73, 3539037, 5, 3539039, 13, 3604493, 2, 3604494, 3, 3604495, 3, 3604496, 3, 3604497, 3, 3604498, 3, 3604499, 3, 3604500, 3, 3604501, 3, 3604502, 3, 3604503, 3, 3604504, 3, 3604505, 3, 3604506, 5, 3604512, 2, 3604513, 3, 3604514, 3, 3604515, 3, 3604516, 73, 3604517, 3, 3604518, 5, 3604523, 13, 3604527, 2, 3604528, 3, 3604529, 3, 3604530, 3, 3604531, 3, 3604532, 3, 3604533, 73, 3604534, 3, 3604535, 72, 3604542, 71, 3604543, 73, 3604544, 73, 3604545, 72, 3604550, 13, 3604553, 31, 3604554, 1, 3604555, 29, 3604557, 31, 3604558, 1, 3604559, 29, 3604560, 536870975, 3604561, 59, 3604562, 4, 3604563, 4, 3604564, 3, 3604565, 3, 3604566, 73, 3604567, 73, 3604568, 73, 3604569, 73, 3604570, 73, 3604571, 73, 3604572, 73, 3604573, 5, 3604575, 13, 3670029, 2, 3670030, 3, 3670031, 3, 3670032, 3, 3670033, 3, 3670034, 3, 3670035, 73, 3670036, 3, 3670037, 3, 3670038, 3, 3670039, 3, 3670040, 3, 3670041, 3, 3670042, 5, 3670048, 2, 3670049, 3, 3670050, 73, 3670051, 73, 3670052, 73, 3670053, 3, 3670054, 5, 3670059, 13, 3670063, 2, 3670064, 3, 3670065, 3, 3670066, 3, 3670067, 73, 3670068, 73, 3670069, 73, 3670070, 73, 3670071, 72, 3670078, 71, 3670079, 73, 3670080, 73, 3670081, 72, 3670086, 13, 3670090, 13, 3670094, 13, 3670097, 27, 3670098, 15, 3670099, 4, 3670100, 73, 3670101, 73, 3670102, 73, 3670103, 73, 3670104, 73, 3670105, 73, 3670106, 73, 3670107, 73, 3670108, 73, 3670109, 5, 3670111, 13, 3735565, 14, 3735566, 15, 3735567, 3, 3735568, 3, 3735569, 73, 3735570, 73, 3735571, 73, 3735572, 73, 3735573, 3, 3735574, 3, 3735575, 73, 3735576, 73, 3735577, 73, 3735578, 5, 3735584, 71, 3735585, 73, 3735586, 73, 3735587, 73, 3735588, 73, 3735589, 73, 3735590, 5, 3735595, 78, 3735599, 2, 3735600, 73, 3735601, 73, 3735602, 73, 3735603, 73, 3735604, 73, 3735605, 73, 3735606, 73, 3735607, 72, 3735614, 71, 3735615, 73, 3735616, 73, 3735617, 72, 3735622, 13, 3735626, 13, 3735630, 13, 3735634, 27, 3735635, 15, 3735636, 4, 3735637, 73, 3735638, 73, 3735639, 73, 3735640, 73, 3735641, 73, 3735642, 73, 3735643, 73, 3735644, 73, 3735645, 5, 3735647, 13, 3801102, 71, 3801103, 73, 3801104, 73, 3801105, 73, 3801106, 73, 3801107, 73, 3801108, 73, 3801109, 73, 3801110, 73, 3801111, 73, 3801112, 73, 3801113, 73, 3801114, 72, 3801120, 71, 3801121, 73, 3801122, 73, 3801123, 73, 3801124, 73, 3801125, 73, 3801126, 72, 3801131, 78, 3801135, 71, 3801136, 73, 3801137, 73, 3801138, 73, 3801139, 73, 3801140, 73, 3801141, 73, 3801142, 73, 3801143, 72, 3801150, 71, 3801151, 73, 3801152, 73, 3801153, 72, 3801158, 13, 3801162, 78, 3801166, 13, 3801171, 27, 3801172, 15, 3801173, 73, 3801174, 73, 3801175, 73, 3801176, 73, 3801177, 73, 3801178, 73, 3801179, 73, 3801180, 73, 3801181, 5, 3801183, 13, 3866638, 71, 3866639, 73, 3866640, 73, 3866641, 73, 3866642, 73, 3866643, 73, 3866644, 73, 3866645, 73, 3866646, 73, 3866647, 73, 3866648, 73, 3866649, 73, 3866650, 72, 3866656, 71, 3866657, 73, 3866658, 73, 3866659, 73, 3866660, 73, 3866661, 73, 3866662, 72, 3866667, 78, 3866671, 71, 3866672, 73, 3866673, 73, 3866674, 73, 3866675, 73, 3866676, 73, 3866677, 73, 3866678, 73, 3866679, 72, 3866686, 71, 3866687, 73, 3866688, 73, 3866689, 72, 3866694, 78, 3866698, 78, 3866702, 13, 3866708, 2, 3866709, 73, 3866710, 73, 3866711, 73, 3866712, 73, 3866713, 73, 3866714, 73, 3866715, 73, 3866716, 73, 3866717, 5, 3866719, 13, 3932174, 71, 3932175, 73, 3932176, 73, 3932177, 73, 3932178, 73, 3932179, 73, 3932180, 73, 3932181, 73, 3932182, 73, 3932183, 73, 3932184, 73, 3932185, 73, 3932186, 72, 3932192, 71, 3932193, 73, 3932194, 73, 3932195, 73, 3932196, 73, 3932197, 73, 3932198, 72, 3932203, 78, 3932207, 71, 3932208, 73, 3932209, 73, 3932210, 73, 3932211, 73, 3932212, 73, 3932213, 73, 3932214, 73, 3932215, 72, 3932222, 71, 3932223, 73, 3932224, 73, 3932225, 72, 3932230, 78, 3932234, 78, 3932238, 78, 3932244, 71, 3932245, 73, 3932246, 73, 3932247, 73, 3932248, 73, 3932249, 73, 3932250, 73, 3932251, 73, 3932252, 73, 3932253, 5, 3932255, 13, 3997710, 71, 3997711, 73, 3997712, 73, 3997713, 73, 3997714, 73, 3997715, 73, 3997716, 73, 3997717, 73, 3997718, 73, 3997719, 73, 3997720, 73, 3997721, 73, 3997722, 72, 3997728, 71, 3997729, 73, 3997730, 73, 3997731, 73, 3997732, 73, 3997733, 73, 3997734, 72, 3997739, 78, 3997743, 71, 3997744, 73, 3997745, 73, 3997746, 73, 3997747, 73, 3997748, 73, 3997749, 73, 3997750, 73, 3997751, 72, 3997758, 71, 3997759, 73, 3997760, 73, 3997761, 72, 3997766, 78, 3997770, 78, 3997774, 78, 3997780, 71, 3997781, 73, 3997782, 73, 3997783, 73, 3997784, 73, 3997785, 73, 3997786, 73, 3997787, 73, 3997788, 73, 3997789, 5, 3997791, 13, 4063246, 71, 4063247, 73, 4063248, 73, 4063249, 73, 4063250, 73, 4063251, 73, 4063252, 73, 4063253, 73, 4063254, 73, 4063255, 73, 4063256, 73, 4063257, 73, 4063258, 72, 4063264, 71, 4063265, 73, 4063266, 73, 4063267, 73, 4063268, 73, 4063269, 73, 4063270, 72, 4063275, 78, 4063279, 71, 4063280, 73, 4063281, 73, 4063282, 73, 4063283, 73, 4063284, 73, 4063285, 73, 4063286, 73, 4063287, 72, 4063294, 71, 4063295, 73, 4063296, 73, 4063297, 72, 4063302, 78, 4063306, 78, 4063310, 78 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="player" parent="." instance=ExtResource( 19 )]
+
+[node name="tilemap_fix" type="Node" parent="."]
+
+[node name="Sprite" type="Sprite" parent="tilemap_fix"]
+
+transform/pos = Vector2( 784, 1712 )
+z/z = -10
+texture = ExtResource( 20 )
+region = true
+region_rect = Rect2( 288, 32, 32, 32 )
+
+[node name="Sprite1" type="Sprite" parent="tilemap_fix"]
+
+transform/pos = Vector2( 784, 1744 )
+z/z = -10
+texture = ExtResource( 20 )
+region = true
+region_rect = Rect2( 288, 32, 32, 32 )
+
+[node name="Sprite2" type="Sprite" parent="tilemap_fix"]
+
+transform/pos = Vector2( 1072, 1680 )
+z/z = -10
+texture = ExtResource( 20 )
+region = true
+region_rect = Rect2( 288, 32, 32, 32 )
+
+[node name="Sprite3" type="Sprite" parent="tilemap_fix"]
+
+transform/pos = Vector2( 1040, 1648 )
+z/z = -10
+texture = ExtResource( 20 )
+region = true
+region_rect = Rect2( 288, 32, 32, 32 )
+
+[node name="Sprite4" type="Sprite" parent="tilemap_fix"]
+
+transform/pos = Vector2( 1168, 1712 )
+z/z = -10
+texture = ExtResource( 20 )
+region = true
+region_rect = Rect2( 288, 32, 32, 32 )
+
+[connection signal="finished" from="hud/Gear_anim" to="player" method="_on_Gear_anim_finished"]
+
+[connection signal="body_enter" from="fall" to="fall" method="_on_body_enter"]
+
+[connection signal="body_enter" from="lantern" to="lantern" method="_on_body_enter"]
+
+[connection signal="finished" from="lantern/lantern_anim" to="lantern" method="_on_lantern_anim_finished"]
+
+

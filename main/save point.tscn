@@ -1,0 +1,155 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://Teleporter.gd" type="Script" id=1]
+[ext_resource path="res://lantern.png" type="Texture" id=2]
+[ext_resource path="res://light_2.png" type="Texture" id=3]
+[ext_resource path="res://sound_coin.wav" type="Sample" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="Animation" id=2]
+
+length = 2.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("lantern:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.4, 0.8, 1.2, 1.6, 2 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1 ), "update":1, "values":[ 0, 1, 2, 3, 4, 5 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("lantern:transform/rot")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 10.0, 15.0, 10.0, 0.0, -10.0, -20.0, -10.0 ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("collision:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 8, 0 ), Vector2( 16, 0 ), Vector2( 8, 0 ), Vector2( 0, 0 ), Vector2( -8, 0 ), Vector2( -16, 0 ), Vector2( -8, 0 ) ] }
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "taken"
+length = 4.0
+loop = false
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("lantern/light_2:visibility/self_opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("lantern/light_2:transform/scale")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6, 4 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 3, 3 ), Vector2( 5, 5 ), Vector2( 10, 10 ), Vector2( 15, 15 ), Vector2( 20, 20 ), Vector2( 25, 25 ), Vector2( 30, 30 ), Vector2( 35, 35 ), Vector2( 40, 40 ), Vector2( 45, 45 ), Vector2( 50, 50 ) ] }
+
+[sub_resource type="SampleLibrary" id=4]
+
+samples/coin = { "db":0.0, "pitch":1.0, "sample":ExtResource( 4 ) }
+
+[node name="lantern" type="Area2D"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1.23077, 3.72529e-09, -3.72529e-09, 1.23077, 5.96046e-08, -2.96139e-07 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+
+[node name="lantern" type="Sprite" parent="."]
+
+transform/pos = Vector2( 4.19247, -63.8625 )
+transform/rot = 1.11545
+texture = ExtResource( 2 )
+offset = Vector2( -4.19247, 63.8625 )
+hframes = 6
+frame = 3
+
+[node name="Light2D" type="Light2D" parent="lantern"]
+
+transform/pos = Vector2( -4.19247, 63.8625 )
+transform/scale = Vector2( 2, 2 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 0.75
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="light_2" type="Sprite" parent="lantern"]
+
+visibility/self_opacity = 0.1
+transform/pos = Vector2( -4.4918, 63.8422 )
+transform/rot = -0.268595
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="lantern_anim" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/spin = SubResource( 2 )
+anims/taken = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "spin"
+
+[node name="sound" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 4 )
+config/pitch_random = 0.0
+
+[node name="enabler" type="VisibilityEnabler2D" parent="."]
+
+transform/pos = Vector2( 4.76837e-07, 4.76837e-07 )
+transform/scale = Vector2( 0.8, 0.8 )
+rect = Rect2( -10, -10, 20, 20 )
+enabler/pause_animations = true
+enabler/freeze_bodies = true
+enabler/pause_particles = true
+enabler/pause_animated_sprites = true
+enabler/process_parent = false
+enabler/fixed_process_parent = false
+
+[node name="collision" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 5.96046e-08, -2.96139e-07 )
+transform/rot = -1.73423e-07
+transform/scale = Vector2( 1.23077, 1.23077 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[connection signal="body_enter" from="." to="." method="_on_body_enter"]
+
+[connection signal="finished" from="lantern_anim" to="." method="_on_lantern_anim_finished"]
+
+

@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://fall.gd" type="Script" id=1]
+[ext_resource path="res://sound_coin.wav" type="Sample" id=2]
+
+[sub_resource type="RectangleShape2D" id=23]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="SampleLibrary" id=24]
+
+samples/coin = { "db":0.0, "pitch":1.0, "sample":ExtResource( 2 ) }
+
+[node name="fall" type="Area2D"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 23 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+
+[node name="sprite" type="Sprite" parent="."]
+
+hframes = 4
+
+[node name="collision" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 23 )
+trigger = true
+_update_shape_index = 0
+
+[node name="sound" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 24 )
+config/pitch_random = 0.0
+
+[node name="enabler" type="VisibilityEnabler2D" parent="."]
+
+rect = Rect2( 0, 0, 0, 0 )
+enabler/pause_animations = true
+enabler/freeze_bodies = true
+enabler/pause_particles = true
+enabler/pause_animated_sprites = true
+enabler/process_parent = false
+enabler/fixed_process_parent = false
+
+[connection signal="body_enter" from="." to="." method="_on_body_enter"]
+
+

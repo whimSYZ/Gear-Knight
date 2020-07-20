@@ -1,0 +1,1985 @@
+[gd_scene load_steps=28 format=1]
+
+[ext_resource path="res://generic-platformer-tiles.png" type="Texture" id=1]
+[ext_resource path="res://TileKit.png" type="Texture" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 16, -8, 16, -16, 8, -16, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 16, -16, 16, -16, -16 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 11.5556, 11.1111 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 16, -8, 16, -16, 8, -16, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 8, 8, 16, -16, 16, -16, -16 )
+
+[sub_resource type="GDScript" id=7]
+
+script/source = ""
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 8, 8, 16, -8, 16, -16, 8, -16, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 8, 8, 16, -8, 16, -16, 8, -16, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 16, -8, 16, -16, 8, -16, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 8, 8, 16, -16, 16, -16, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 16, -8, 16, -16, 8, -16, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 8, 8, 16, -16, 16, -16, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 8, 8, 16, -8, 16, -16, 8, -16, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 8, 8, 16, -8, 16, -16, 8, -16, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -16, -16, 16, 16, 0, 16, -16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 0, 0, 16, -16, 16, 0, 0, 16, -16, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, -2, -6, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -16, -16, 16, -4, 16, 16, -16, -2 )
+
+[sub_resource type="ConvexPolygonShape2D" id=20]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -16, -4, 16, -16, 16, -2, -16, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=21]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 6, -16, -16, -2, -16, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=22]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, 16, -16, 16, -16, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=23]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 8, 8, 16, -16, 16, -16, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=24]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 16, -8, 16, -16, 8, -16, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=25]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -16, 16, 8, 8, 16, -16, 16, -16, -16 )
+
+[node name="tileset_grassland2" type="Node2D"]
+
+[node name="1" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 16, 16 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 0, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="StaticBody2D" type="StaticBody2D" parent="1"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 8, -8, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="25" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 16, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="25"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="25"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="25/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="32 7" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 48, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 32, 32, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="32 7"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="32 7"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="32 7/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="328" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 80, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 64, 32, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="328"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="328"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="328/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="329 6" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 112, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 96, 32, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="329 6"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="329 6"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="329 6/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="3297" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 144, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 128, 32, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="3297"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3297"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="3297/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="3298" type="Sprite" parent="."]
+
+transform/pos = Vector2( 176, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 160, 32, 32, 32 )
+
+[node name="Area2D" type="Area2D" parent="3298"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1.61539, 0, 0, 1.53846, 5.36442e-07, -2.38419e-07 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3298/Area2D"]
+
+transform/pos = Vector2( 5.36442e-07, -2.38419e-07 )
+transform/scale = Vector2( 1.61539, 1.53846 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="3299" type="Sprite" parent="."]
+
+transform/pos = Vector2( 208, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 192, 32, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="Area2D1" type="Area2D" parent="3299"]
+
+transform/pos = Vector2( -32, 0 )
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1.61539, 0, 0, 1.53846, 32, 0.999999 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3299/Area2D1"]
+
+transform/pos = Vector2( 32, 0.999999 )
+transform/scale = Vector2( 1.61539, 1.53846 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="3300" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 240, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 224, 32, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="3300"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3300"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="3300/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="3305" type="Sprite" parent="."]
+
+transform/pos = Vector2( 400, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 224, 32, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="3301" type="Sprite" parent="."]
+
+transform/pos = Vector2( 272, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 256, 32, 32, 32 )
+
+[node name="3307" type="Sprite" parent="."]
+
+transform/pos = Vector2( 400, 16 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 256, 32, 32, 32 )
+
+[node name="3302" type="Sprite" parent="."]
+
+transform/pos = Vector2( 304, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 288, 32, 32, 32 )
+
+[node name="3303" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 336, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 320, 32, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="3303"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3303"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="3303/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="3306" type="Sprite" parent="."]
+
+transform/pos = Vector2( 432, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 320, 32, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="3308" type="Sprite" parent="."]
+
+transform/pos = Vector2( 368, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 352, 32, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3308"]
+
+editor/display_folded = true
+z/z = -1
+input/pickable = false
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 1.38461, 0, 0, 0.45, 0, -9 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+one_way_collision/direction = Vector2( 0, 1 )
+one_way_collision/max_depth = 20.0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3308/StaticBody2D"]
+
+transform/pos = Vector2( 0, -9 )
+transform/scale = Vector2( 1.38461, 0.45 )
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 0
+
+[node name="3309" type="Sprite" parent="."]
+
+transform/pos = Vector2( 464, 80 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 352, 32, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3309"]
+
+editor/display_folded = true
+z/z = -1
+input/pickable = false
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 1.38461, 0, 0, 0.45, 0, -9 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+one_way_collision/direction = Vector2( 0, 1 )
+one_way_collision/max_depth = 20.0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3309/StaticBody2D"]
+
+transform/pos = Vector2( 0, -9 )
+transform/scale = Vector2( 1.38461, 0.45 )
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 0
+
+[node name="26" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 16, 144 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 64, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="26"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="26"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="26/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="32 2" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 48, 144 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 32, 64, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="32 2"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="32 2"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="32 2/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 8, -8, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="323" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 80, 144 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 64, 64, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="323"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="323"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="323/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="329 4" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 112, 144 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 96, 64, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="329 4"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="329 4"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="329 4/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="3295" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 144, 144 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 128, 64, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="3295"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3295"]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="3295/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 8, 16, 16, 8, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="3298 2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 176, 144 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 160, 64, 32, 32 )
+script/script = SubResource( 7 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="3298 2"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="Area2D1" type="Area2D" parent="3298 2"]
+
+transform/pos = Vector2( 1, -19 )
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1.61539, 0, 0, 1.53846, -1, 19 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3298 2/Area2D1"]
+
+transform/pos = Vector2( -1, 19 )
+transform/scale = Vector2( 1.61539, 1.53846 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="32983" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 208, 144 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 192, 64, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="32983"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="Area2D2" type="Area2D" parent="32983"]
+
+transform/pos = Vector2( -31, -19 )
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1.61539, 0, 0, 1.53846, 31, 19 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="32983/Area2D2"]
+
+transform/pos = Vector2( 31, 19 )
+transform/scale = Vector2( 1.61539, 1.53846 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="32987 4" type="Sprite" parent="."]
+
+transform/pos = Vector2( 240, 144 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 224, 64, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="329875" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 272, 144 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 256, 64, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="329875"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="329875"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="329875/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="329876 2" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 304, 144 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 288, 64, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="329876 2"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="329876 2"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="329876 2/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="3298763" type="Sprite" parent="."]
+
+transform/pos = Vector2( 336, 144 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 320, 64, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="3298765 2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 368, 144 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 352, 64, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="32987653" type="Sprite" parent="."]
+
+transform/pos = Vector2( 400, 144 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 352, 64, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="27" type="Sprite" parent="."]
+
+transform/pos = Vector2( 16, 208 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 96, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="27"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="27"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="27/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 8, -8, 16, 8, 16, 16, 8, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="32" type="Sprite" parent="."]
+
+transform/pos = Vector2( 48, 208 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 32, 96, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="32"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="32"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="32/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 8, -8, 16, 8, 16, 16, 8, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="33" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 80, 208 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 64, 96, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="33"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="33"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 10 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="33/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 8, -8, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="34" type="Sprite" parent="."]
+
+transform/pos = Vector2( 112, 208 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 96, 96, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="34"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="34"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 11 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="34/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( 16, -16, 16, 8, 8, 16, -16, 16, -16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="35" type="Sprite" parent="."]
+
+transform/pos = Vector2( 144, 208 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 128, 96, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="35"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="36" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 192, 224 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 160, 96, 64, 64 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="36"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="38" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 240, 208 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 224, 96, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="38"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="39" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 272, 208 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 256, 96, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="39"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="39"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 12 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="39/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 8, -8, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="40" type="Sprite" parent="."]
+
+transform/pos = Vector2( 304, 208 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 288, 96, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="40"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="40"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 13 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="40/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 8, 16, 16, 8, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="41" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 336, 208 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 320, 96, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="41"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="41"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 14 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="41/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 8, -8, 16, 8, 16, 16, 8, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="42" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 368, 208 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 352, 96, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="42"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="42"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 15 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="42/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 8, -8, 16, 8, 16, 16, 8, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="28" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 16, 272 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 128, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="28"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="43" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 48, 272 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 32, 128, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="43"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="44" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 80, 272 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 64, 128, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="44"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="45" type="Sprite" parent="."]
+
+transform/pos = Vector2( 112, 272 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 96, 128, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="46" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 144, 272 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 128, 128, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="46"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="50" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 272, 272 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 256, 128, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="50"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="51" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 384, 320 )
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 288, 128, 96, 96 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="51"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="29" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 16, 336 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 160, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="29"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="29"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 16 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="29/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, 0, 0, 16, 16, 16, -16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="32 4" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 48, 336 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 32, 160, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="32 4"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="325" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 80, 336 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 64, 160, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="325"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="329 5" type="Sprite" parent="."]
+
+transform/pos = Vector2( 112, 336 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 96, 160, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="329 5"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="329 5"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 17 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="329 5/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( 0, 0, 16, -16, 16, 0, 0, 16, -16, 16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="3296" type="Sprite" parent="."]
+
+transform/pos = Vector2( 208, 352 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 128, 160, 160, 64 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="3296"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="329879" type="Sprite" parent="."]
+
+transform/pos = Vector2( 208, 464 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 256, 160, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="329879"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="30" type="Sprite" parent="."]
+
+transform/pos = Vector2( 16, 400 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 192, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="30"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="30"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 18 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="30/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( 16, -16, 16, -2, -6, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="32 6" type="Sprite" parent="."]
+
+transform/pos = Vector2( 48, 400 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 32, 192, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="32 6"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="32 6"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 19 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="32 6/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, 16, -4, 16, 16, -16, -2 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="327" type="Sprite" parent="."]
+
+transform/pos = Vector2( 80, 400 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 64, 192, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="327"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="327"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 20 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="327/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -4, 16, -16, 16, -2, -16, 16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="329 3" type="Sprite" parent="."]
+
+transform/pos = Vector2( 112, 400 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 96, 192, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="329 3"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="329 3"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 21 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="329 3/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, -2, 6, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="31" type="Sprite" parent="."]
+
+transform/pos = Vector2( 16, 464 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 224, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="31"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="31"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 22 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="31/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( 16, 0, -16, 0, -16, 16, 16, 16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="37" type="Sprite" parent="."]
+
+transform/pos = Vector2( 240, 464 )
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 288, 256, 32, 32 )
+
+[node name="47" type="Sprite" parent="."]
+
+transform/pos = Vector2( 272, 464 )
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 288, 256, 32, 32 )
+
+[node name="32 5" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 48, 464 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 32, 224, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="32 5"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="326" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 80, 464 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 64, 224, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="326"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="329 2" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 112, 464 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 96, 224, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="329 2"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="3293" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 144, 464 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 128, 224, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="3293"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="3298 4" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 176, 464 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 160, 224, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="3298 4"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="2" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 48, 16 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 32, 0, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="2"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="2"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="2/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="3" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 80, 16 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 64, 0, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="3"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="3/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="4" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 112, 16 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 96, 0, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="4"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="4"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="4/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="5" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 144, 16 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 128, 0, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="5"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="5"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="5/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="6" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 176, 16 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 160, 0, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="6"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="6"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 23 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="6/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 8, 16, 16, 8, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="7" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 208, 16 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 192, 0, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="7"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="7"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 24 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="7/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 8, -8, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="8" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 240, 16 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 224, 0, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="8"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="8"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="8/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="9" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 272, 16 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 256, 0, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="9"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="9"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="9/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="10" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 304, 16 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 288, 0, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="10"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="10"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="10/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="11" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 336, 16 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 320, 0, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="11"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="11"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="11/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 16, 16, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="12" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 368, 16 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 352, 0, 32, 32 )
+__meta__ = { "_edit_group_":true }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="12"]
+
+color = Color( 0.9375, 0.9375, 0.9375, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="12"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 25 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="12/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -16, -16, -16, 16, 8, 16, 16, 8, 16, -16 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+color = Color( 1, 0.933594, 0.933594, 1 )
+
+
